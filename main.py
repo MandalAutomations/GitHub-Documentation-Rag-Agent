@@ -9,11 +9,11 @@ OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://ollama:11434")
 MODEL = "llama3.2:1b" # Find available models here https://ollama.com/library
 EMBEDDING_MODEL = "granite-embedding:30m" # Find available models here https://ollama.com/library
 
-dbname=os.getenv("PGDATABASE", "vector-postgres")
-user=os.getenv("PGUSER", "vector-postgres")
-password=os.getenv("PGPASSWORD", "vector-postgres")
+dbname=os.getenv("PGDATABASE", "postgres")
+user=os.getenv("PGUSER", "user")
+password=os.getenv("PGPASSWORD", "password")
 host=os.getenv("PGHOST", "vector-postgres")
-port=os.getenv("PGPORT", "vector-postgres")
+port=os.getenv("PGPORT", "5432")
 
 vectordb = VectorDB(host=host, user=user, password=password, dbname=dbname, port=port)
 llm = llama(OLLAMA_HOST, model=MODEL, embedding_model=EMBEDDING_MODEL)
