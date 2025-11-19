@@ -3,9 +3,9 @@ from src.llama import llama
 from src.postgres_db import VectorDB
 from dotenv import load_dotenv
 
-load_dotenv() 
+load_dotenv()
 
-OLLAMA_HOST = "http://localhost:11434" # os.getenv("OLLAMA_HOST", "http://ollama:11434")
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://ollama:11434")
 MODEL = "llama3.2:1b" # Find available models here https://ollama.com/library
 EMBEDDING_MODEL = "granite-embedding:30m" # Find available models here https://ollama.com/library
 
